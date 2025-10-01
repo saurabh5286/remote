@@ -1,66 +1,113 @@
-<!DOCTYPE html>
+Ye le nya code <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Login / Signup</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    /* New Colour Palette */
+    :root {
+      --primary-color: #ff6b6b; /* Bright Red/Coral for buttons/links */
+      --secondary-color: #4ecdc4; /* Teal for contrast elements */
+      --background-start: #ffe66d; /* Light Yellow/Orange for gradient start */
+      --background-end: #ffa07a; /* Light Salmon/Coral for gradient end */
+      --text-dark: #333333;
+      --text-light: #ffffff;
+      --container-bg: #ffffff;
+    }
+
     body {
-      background: #f4f4f4;
-      font-family: Arial, sans-serif;
+      /* Vibrant gradient background */
+      background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Changed font */
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
     }
 
     .container {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      width: 300px;
+      background: var(--container-bg);
+      padding: 40px; /* Increased padding */
+      border-radius: 15px; /* Softer rounded corners */
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2); /* More pronounced shadow */
+      width: 320px; /* Slightly wider */
+      transform: scale(1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .container:hover {
+        transform: scale(1.03); /* Subtle hover effect */
     }
 
     h2 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      color: var(--text-dark);
+      letter-spacing: 1px;
     }
 
     input {
       width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      padding: 12px; /* Increased padding */
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px; /* Softer input corners */
+      box-sizing: border-box; /* Crucial for padding/width calculation */
+      transition: border-color 0.3s;
+    }
+
+    input:focus {
+        border-color: var(--secondary-color); /* Highlight on focus */
+        outline: none;
     }
 
     button {
       width: 100%;
-      background-color: #007bff;
-      color: white;
-      padding: 10px;
+      background-color: var(--primary-color); /* Vibrant primary colour */
+      color: var(--text-light);
+      padding: 12px;
       border: none;
-      border-radius: 4px;
+      border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
+      font-size: 16px;
+      margin-top: 15px;
+      transition: background-color 0.3s, transform 0.1s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     button:hover {
-      background-color: #0056b3;
+      background-color: #e55a5a; /* Slightly darker primary on hover */
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    button:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     #toggleForm {
       text-align: center;
-      margin-top: 15px;
-      color: #007bff;
+      margin-top: 20px;
+      color: var(--secondary-color); /* Contrasting colour for link */
       cursor: pointer;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+
+    #toggleForm:hover {
+        color: #3aa69e; /* Darker secondary on hover */
+        text-decoration: underline;
     }
 
     #message {
       text-align: center;
-      margin-top: 10px;
-      font-size: 14px;
+      margin-top: 15px;
+      font-size: 15px;
+      font-weight: 600;
     }
 
     .hidden {
@@ -73,14 +120,12 @@
   <div class="container">
     <h2 id="formTitle">Login</h2>
 
-    <!-- Login Form -->
     <form id="loginForm">
       <input type="email" id="loginEmail" placeholder="Email" required>
       <input type="password" id="loginPassword" placeholder="Password" required>
       <button type="submit">Login</button>
     </form>
 
-    <!-- Signup Form -->
     <form id="signupForm" class="hidden">
       <input type="email" id="signupEmail" placeholder="Email" required>
       <input type="password" id="signupPassword" placeholder="Password" required>
@@ -113,54 +158,75 @@
       }
     });
 
-    // Handle login
+    // Handle login (Note: This client-side logic requires a server to function properly)
     loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const email = document.getElementById('loginEmail').value;
       const password = document.getElementById('loginPassword').value;
 
-      const res = await fetch('/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
-      });
+      // --- Start: Dummy client-side response for demonstration without a backend ---
+      messageDiv.textContent = 'Attempting login...';
+      try {
+          // Simulate API call delay
+          await new Promise(resolve => setTimeout(resolve, 800)); 
 
-      const data = await res.json();
-      messageDiv.textContent = data.message;
-      messageDiv.style.color = res.ok ? 'green' : 'red';
+          // Dummy success/fail logic (replace with actual fetch to your backend)
+          const success = (email === 'test@example.com' && password === 'password123'); 
+          
+          if (success) {
+              messageDiv.textContent = 'Login successful! Redirecting...';
+              messageDiv.style.color = 'var(--secondary-color)';
+              setTimeout(() => {
+                // window.location.href = 'men.html'; // Actual redirect
+                console.log("Redirecting to men.html"); 
+              }, 1000);
+          } else {
+              messageDiv.textContent = 'Invalid email or password.';
+              messageDiv.style.color = 'var(--primary-color)';
+          }
 
-      if (res.ok) {
-        setTimeout(() => {
-          window.location.href = 'men.html';  // Redirect after successful login
-        }, 1000);
+      } catch (error) {
+           messageDiv.textContent = 'An error occurred during login.';
+           messageDiv.style.color = 'var(--primary-color)';
       }
+      // --- End: Dummy client-side response ---
     });
 
-    // Handle signup
+    // Handle signup (Note: This client-side logic requires a server to function properly)
     signupForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const email = document.getElementById('signupEmail').value;
       const password = document.getElementById('signupPassword').value;
 
-      const res = await fetch('/signup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
-      });
+      // --- Start: Dummy client-side response for demonstration without a backend ---
+      messageDiv.textContent = 'Attempting signup...';
+      try {
+          // Simulate API call delay
+          await new Promise(resolve => setTimeout(resolve, 800)); 
 
-      const data = await res.json();
-      messageDiv.textContent = data.message;
-      messageDiv.style.color = res.ok ? 'green' : 'red';
-
-      if (res.ok) {
-        // Switch to login form after successful signup
-        signupForm.classList.add('hidden');
-        loginForm.classList.remove('hidden');
-        formTitle.textContent = 'Login';
-        toggleForm.textContent = "Don't have an account? Sign up";
+          // Dummy success logic (replace with actual fetch to your backend)
+          const success = email.includes('@') && password.length >= 6; 
+          
+          if (success) {
+              messageDiv.textContent = 'Sign up successful! Please log in.';
+              messageDiv.style.color = 'var(--secondary-color)';
+              
+              // Switch to login form after successful signup
+              signupForm.classList.add('hidden');
+              loginForm.classList.remove('hidden');
+              formTitle.textContent = 'Login';
+              toggleForm.textContent = "Don't have an account? Sign up";
+          } else {
+              messageDiv.textContent = 'Sign up failed. Check email format and password length.';
+              messageDiv.style.color = 'var(--primary-color)';
+          }
+      } catch (error) {
+           messageDiv.textContent = 'An error occurred during signup.';
+           messageDiv.style.color = 'var(--primary-color)';
       }
+      // --- End: Dummy client-side response ---
     });
   </script>
 
