@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkyCart - Fashion Shopping</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-o8CnlU6kxW0jI90tTKFv6zbfy/lh8i/v5G4rBIlFJ9Ih8hR3M3SswWZ0+EnC0gXrBn7X6sK3WkW4gG+v3jZ5Fw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ✅ Navbar -->
+  <header>
+    <nav class="navbar flex container">
+      <a href="#" class="logo">Sky<span>Cart</span>.</a>
+
+      <ul class="navlist flex">
+        <li><a href="#" class="link link-active">Home</a></li>
+        <li><a href="#" class="link">Shop</a></li>
+        <li><a href="#" class="link">Pages</a></li>
+        <li><a href="#" class="link">Blog</a></li>
+        <li><a href="#contact" class="link">Contact</a></li>
+      </ul>
+
+      <div class="nav-icons flex">
+        <a href="#" class="icon"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="login.html" class="icon"><i class="fa-solid fa-user"></i></a>
+        <a href="#" class="icon icon-active"><i class="fa-solid fa-shopping-bag"></i></a>
+      </div>
+
+      <a href="#" class="hamburger"><i class="fa-solid fa-bars"></i></a>
+    </nav>
+  </header>
+
+  <!-- ✅ Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="hero-content flex container">
+        <div>
+          <h3>Summer Fashion</h3>
+          <h1>New Collection</h1>
+          <h4>Big Sale of this week up to <span>30%</span></h4>
+          <div class="shop-now-container">
+            <button onclick="window.location.href='login.html'">Shop Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ Category Section -->
+    <section class="section">
+      <div class="category-container container">
+        <div class="category">
+          <img src="images/for men.jpg" alt="Men" />
+          <a href="men.html"><button>Men's</button></a>
+        </div>
+
+        <div class="category">
+          <img src="images/for kids.jpg" alt="Kids" />
+          <a href="kids.html"><button>Kid's</button></a>
+        </div>
+
+        <div class="category">
+          <img src="images/for accesories.jpg" alt="Accessories" />
+          <a href="accessories.html"><button>Accessories</button></a>
+        </div>
+
+        <div class="category">
+          <img src="images/for women.jpg" alt="Women" />
+          <a href="women.html"><button>Women's</button></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Future sections can go here -->
+  </main>
+
+  <!-- ✅ Footer -->
+ <footer id="contact" style="background:#fafafa; color:#444; padding:40px 5%; font-family: 'Inter', sans-serif;">
+  <div style="max-width:1200px; margin:0 auto;">
+
+    <div style="display:flex; flex-wrap:wrap; gap:40px; justify-content:space-between; margin-bottom:40px;">
+      
+      <div style="flex:1 1 220px; min-width:220px;">
+        <h3 style="font-weight:700; margin-bottom:15px; font-size:1.25rem; color:#222;">About SkyCart</h3>
+        <p style="line-height:1.6; font-weight:400; color:#555;">
+          SkyCart is your premier destination for the latest fashion and clothing designs. We offer cutting-edge products with competitive prices and exceptional customer service.
+        </p>
+        <div style="margin-top:20px;">
+          <a href="#" style="color:#888; margin-right:15px; font-size:1.2rem; transition:color 0.3s;" onmouseover="this.style.color='#e63946'" onmouseout="this.style.color='#888'"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" style="color:#888; margin-right:15px; font-size:1.2rem; transition:color 0.3s;" onmouseover="this.style.color='#e63946'" onmouseout="this.style.color='#888'"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" style="color:#888; margin-right:15px; font-size:1.2rem; transition:color 0.3s;" onmouseover="this.style.color='#e63946'" onmouseout="this.style.color='#888'"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" style="color:#888; font-size:1.2rem; transition:color 0.3s;" onmouseover="this.style.color='#e63946'" onmouseout="this.style.color='#888'"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div style="flex:1 1 150px; min-width:150px;">
+        <h3 style="font-weight:700; margin-bottom:15px; font-size:1.25rem; color:#222;">Quick Links</h3>
+        <ul style="list-style:none; padding:0; margin:0; color:#555;">
+          <li style="margin-bottom:10px;"><a href="#" style="color:#555; text-decoration:none; font-weight:500;" onmouseover="this.style.color='#e63946'" onmouseout="this.style.color='#555'">Home</a></li>
+          <li style="margin-bottom:10px;"><a href="#" style="color:#555; text-decoration:none; font-weight:500;" onmouseover="this.style.color='#e63946'" onmouseout="this.style.color='#555'">Products</a></li>
+          <li style="margin-bottom:10px;"><a href="#" style="color:#555; text-decoration:none; font-weight:500;" onmouseover="this.style.color='#e63946'" onmouseout="this.style.color='#555'">About Us</a></li>
+          <li style="margin-bottom:10px;"><a href="#contact" style="color:#555; text-decoration:none; font-weight:500;" onmouseover="this.style.color='#e63946'" onmouseout="this.style.color='#555'">Contact</a></li>
+          <li style="margin-bottom:10px;"><a href="#" style="color:#555; text-decoration:none; font-weight:500;" onmouseover="this.style.color='#e63946'" onmouseout="this.style.color='#555'">Privacy Policy</a></li>
+          <li><a href="#" style="color:#555; text-decoration:none; font-weight:500;" onmouseover="this.style.color='#e63946'" onmouseout="this.style.color='#555'">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <div style="flex:1 1 150px; min-width:150px;">
+        <h3 style="font-weight:700; margin-bottom:15px; font-size:1.25rem; color:#222;">Customer Service</h3>
+        <ul style="list-style:none; padding:0; margin:0; color:#555;">
+          <li style="margin-bottom:10px;"><a href="#" style="color:#555; text-decoration:none; font-weight:500;" onmouseover="this.style.color='#e63946'" onmouseout="this.style.color='#555'">Help Center</a></li>
+          <li style="margin-bottom:10px;"><a href="#" style="color:#555; text-decoration:none; font-weight:500;" onmouseover="this.style.color='#e63946'" onmouseout="this.style.color='#555'">Track Your Order</a></li>
+          <li style="margin-bottom:10px;"><a href="#" style="color:#555; text-decoration:none; font-weight:500;" onmouseover="this.style.color='#e63946'" onmouseout="this.style.color='#555'">Returns & Exchanges</a></li>
+          <li style="margin-bottom:10px;"><a href="#" style="color:#555; text-decoration:none; font-weight:500;" onmouseover="this.style.color='#e63946'" onmouseout="this.style.color='#555'">Shipping Information</a></li>
+          <li style="margin-bottom:10px;"><a href="#" style="color:#555; text-decoration:none; font-weight:500;" onmouseover="this.style.color='#e63946'" onmouseout="this.style.color='#555'">Warranty</a></li>
+          <li><a href="#" style="color:#555; text-decoration:none; font-weight:500;" onmouseover="this.style.color='#e63946'" onmouseout="this.style.color='#555'">Support</a></li>
+        </ul>
+      </div>
+
+      <div style="flex:1 1 220px; min-width:220px;">
+        <h3 style="font-weight:700; margin-bottom:15px; font-size:1.25rem; color:#222;">Contact Info</h3>
+        <p style="margin-bottom:8px; font-weight:500;">📍 123 Fashion Street, Digital City, TC 12345</p>
+        <p style="margin-bottom:8px; font-weight:500;">📞 +1 (555) 123-4567</p>
+        <p style="margin-bottom:8px; font-weight:500;">📧 info@skycart.com</p>
+        <p style="font-weight:500;">🕐 Mon-Fri: 9AM - 6PM</p>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-bottom:30px;">
+      <h3 style="font-weight:700; margin-bottom:10px; color:#222;">Stay Updated</h3>
+      <p style="margin-bottom:15px; color:#555;">Subscribe to our newsletter for the latest deals and fashion drops!</p>
+      <form style="display:flex; justify-content:center; gap:10px; max-width:400px; margin:0 auto;">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          style="padding:10px 15px; border:1px solid #ccc; border-radius:4px; flex-grow:1; font-size:1rem;"
+          required
+        />
+        <button
+          type="submit"
+          style="padding:10px 20px; background:#e63946; border:none; color:#fff; font-weight:700; border-radius:4px; cursor:pointer; transition: background 0.3s ease;"
+          onmouseover="this.style.background='#b52a3b'"
+          onmouseout="this.style.background='#e63946'"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+
+    <div style="text-align:center; font-size:0.875rem; color:#888; border-top:1px solid #ddd; padding-top:20px;">
+      <p>© 2024 SkyCart. All rights reserved.</p>
+      <p>Made with ❤ for fashion enthusiasts</p>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="main.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
